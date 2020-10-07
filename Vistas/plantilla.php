@@ -24,25 +24,35 @@ session_start();
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <script src="https://kit.fontawesome.com/9c0f7b9fd7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Vistas/css/estilos.css">
+   
+   
+ 
+ 
 </head>
 <body>
 
-<?php if (isset($_GET["ruta"])) {
+<?php if(isset($_SESSION["email"])){
+if (isset($_GET["ruta"])) {
 if ($_GET["ruta"] == "jefatura"||
-$_GET["ruta"] == "secretaria"||
-$_GET["ruta"] == "docentes"||
+    $_GET["ruta"] == "secretaria"||
+    $_GET["ruta"] == "docentes"||
     $_GET["ruta"] == "preguntas"||
     $_GET["ruta"] == "questions" ||
-    $_GET["ruta"] == "login"    
+    $_GET["ruta"] == "login"||
+    $_GET["ruta"] == "log" ||
+    $_GET["ruta"] == "ARegistrar"    
     ) {
-    include "./vistas/paginas/".$_GET["ruta"].".php";
+    include "./Vistas/paginas/".$_GET["ruta"].".php";
     
 }
 
-}else{
-    include "./vistas/paginas/bienvenida.php";
+}
 
-}?>
+}else{
+    include "./Vistas/paginas/ARegistrar.php";}?>
 
 </body>
 </html>
